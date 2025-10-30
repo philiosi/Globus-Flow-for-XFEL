@@ -1,0 +1,27 @@
+{
+  "Comment": "PAL-XFEL 데이터 전송 Flow",
+  "StartAt": "TransferData",
+  "States": {
+    "TransferData": {
+      "Comment": "원시 데이터를 목적지로 전송",
+      "Type": "Action",
+      "ActionUrl": "https://actions.automate.globus.org/transfer/transfer",
+      "Parameters": {
+        "source_endpoint_id.$": "$.input.source.id",
+        "destination_endpoint_id.$": "$.input.destination.id",
+        "transfer_items": [
+          {
+            "source_path.$": "$.input.source.path",
+            "destination_path.$": "$.input.destination.path",
+            "recursive.$": "$.input.recursive_tx"
+          }
+        ],
+        "label": "PAL-XFEL Data Transfer",
+        "sync_level": "checksum"
+      },
+      "ResultPath": "$.TransferResult",
+      "WaitTime": 300,
+      "End": true
+    }
+  }
+}

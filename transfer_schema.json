@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PAL-XFEL Transfer Flow 입력",
+  "type": "object",
+  "required": ["input"],
+  "properties": {
+    "input": {
+      "type": "object",
+      "required": ["source", "destination"],
+      "properties": {
+        "source": {
+          "type": "object",
+          "title": "소스 컬렉션",
+          "required": ["id", "path"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "title": "소스 컬렉션 UUID"
+            },
+            "path": {
+              "type": "string",
+              "title": "소스 경로"
+            }
+          }
+        },
+        "destination": {
+          "type": "object",
+          "title": "목적지 컬렉션",
+          "required": ["id", "path"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "title": "목적지 컬렉션 UUID"
+            },
+            "path": {
+              "type": "string",
+              "title": "목적지 경로"
+            }
+          }
+        },
+        "recursive_tx": {
+          "type": "boolean",
+          "title": "재귀적 전송",
+          "default": true
+        }
+      }
+    }
+  }
+}
