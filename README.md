@@ -1,4 +1,4 @@
-# Globus Flow 샘플 코드 - PAL-XFEL DAQ 시스템
+# Globus Data Transfer and Flow - PAL-XFEL DAQ 시스템
 
 PAL-XFEL DAQ 시스템에서 Globus Flow를 활용한 데이터 전송 자동화를 위한 샘플 코드 모음입니다.
 
